@@ -1,0 +1,59 @@
+.container-swiper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: auto 1366 / 290;
+  height: 290px;
+}
+
+.container-swiper > h1 {
+  color: var(--color-white);
+  position: absolute;
+  top: 70%;
+
+  margin-left: 2rem;
+}
+
+.container-swiper > h3 {
+  color: var(--color-white);
+  position: absolute;
+  top: 85%;
+
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .container-swiper {
+    width: 100vw;
+    height: auto; 
+}
+.container-swiper > img{
+aspect-ratio: 16/9;
+}
+
+.container-swiper > h1 {
+  font-size: 1.5rem;
+}
+
+.container-swiper > h3 {
+    font-size: 1rem;
+
+}
+}
+@media screen and (max-width: 600px) {
+   .container-swiper {
+    width: 100vw;
+    height: auto; 
+}
+.container-swiper > img{
+aspect-ratio: 16/9;
+}
+
+.container-swiper > h1 {
+  font-size: 1.5rem;
+}
+
+.container-swiper > h3 {
+    font-size: 0.5rem;
+
+}
+}

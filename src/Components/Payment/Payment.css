@@ -1,0 +1,76 @@
+.pay-container {
+  margin-top: 2rem;
+  padding: 2rem;
+
+  min-width: 380px;
+  width: max-content;
+  height: max-content;
+
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+
+  border-top: solid 3px rgb(255, 255, 255);
+  border-bottom: solid 3px rgb(255, 255, 255);
+ 
+  border-radius: 0.9rem;
+
+  transition: all 100ms ease;
+}
+
+.pay-container:hover {
+  box-shadow: 0px 1px 20px -5px rgba(255, 255, 255, 0.5);
+}
+
+.container-payment-all {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 3rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-info > h1 {
+  font-size: 1rem;
+}
+
+.card-info > h5 {
+  font-size: 0.7rem;
+}
+
+.icon {
+  margin: 1.5rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .container-payment-all {
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+}
+}
+
+@media screen and (max-width: 600px) {
+   .container-payment-all {
+  grid-template-columns: 1fr;
+    margin-top: 2rem;
+
+}
+.pay-container{
+    margin: 1rem auto;
+    padding: 1rem;
+  min-width: 80%;
+
+}
+
+.card{
+    flex-direction: column;
+}
+
+
+}
