@@ -11,20 +11,21 @@
 }
 
 :root {
-  --color-bg: #040a0e;
-  --color-bg-variant: #152B3C;
-  --color-primary: #3A668B;
-  --color-primary-variant: #4380B1;
-  --color-white: #e7dfdd;
+  --color-bg: #141414;
+  --color-bg-variant: #9c9c9c52;
+  --color-primary: #FECE00;
+  --color-secundary: #B9FE00;
+  --color-tertiary: #E54947;
+  --color-white: whitesmoke;
 
   --container-width: 100%;
-
   --transition: all 400ms ease
 }
 
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -32,7 +33,6 @@ body {
   background: var(--color-bg);
   color: var(--color-white);
   line-height: 1.7;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   overflow-x: hidden;
 }
 

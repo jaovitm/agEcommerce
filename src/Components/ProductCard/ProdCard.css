@@ -1,36 +1,37 @@
 .product-card-container {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 3rem;
+  padding: 2rem;
+}
 
-  position: relative;
-  right: 50%;
-
-  transition: all 1s ease-in-out;
-
+.product-card-container-sf {
+  display: none;
 }
 
 .product-card {
   background-color: transparent;
   backdrop-filter: blur(2px);
 
-  border-top: solid 3px rgb(255, 255, 255);
-  border-bottom: solid 3px rgb(255, 255, 255);
-
+  border: 2px solid var(--color-bg-variant);
   border-radius: 0.9rem;
 
   display: grid;
-  grid-template-columns: 10rem 15rem;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+
+  padding: 0.5rem;
 
   cursor: pointer;
   text-decoration: none;
-  color: var(--color-white);
+  color: black;
 }
 
 .product-card > img {
-  width: 10rem;
-  padding: 1rem;
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+}
+
+.product-card:hover {
+  border-color: var(--color-primary);
 }
 
 .product-card-details {
@@ -39,41 +40,44 @@
 
 .product-card-details > h1 {
   font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-white);
 }
-
-.daily-controls {
-  display: flex;
-  justify-content: center;
+.product-card-details > small {
+  color: var(--color-white);
 }
-
-.daily-controls div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 2rem 0.5rem;
-
-  background-color: var(--color-primary);
-  width: 1rem;
-  height: 1rem;
-
-  cursor: pointer;
-
-  border-radius: 50%;
-}
-.daily-controls div button {
-  background-color: var(--color-white);
-  width: 0.4rem;
-  height: 0.4rem;
-
-  border-radius: 50%;
-
-    cursor: inherit;
-
+.product-card-details > small:first-of-type {
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 1024px) {
+
+.product-card{
+  grid-template-columns: 1fr;
+}
+
 }
 
 @media screen and (max-width: 600px) {
+  .product-card-container {
+    display: none;
+  }
+
+  .product-card-container-sf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .product-card {
+    margin: 0.7rem;
+    padding: 0.5rem;
+    border: .1px solid var(--color-primary);
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  small {
+    font-size: 0.7rem;
+  }
 }

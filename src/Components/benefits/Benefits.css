@@ -1,0 +1,30 @@
+.benefits-contianer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items:center;
+}
+
+.benefits-title{
+    margin: 3rem 1rem;
+}
+
+ol{
+    padding: 2rem;
+}
+
+ol > li{
+    list-style: disc;
+}
+
+.benefits-img{
+    justify-self: center;
+    align-self:center;
+
+    margin: 1rem;
+
+    width: 90%;
+    border: 2px solid var(--color-bg-variant);
+    border-radius: 1rem;
+}
+

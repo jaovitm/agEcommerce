@@ -42,7 +42,8 @@ aspect-ratio: 16/9;
 @media screen and (max-width: 600px) {
    .container-swiper {
     width: 100vw;
-    height: auto; 
+    height: auto;
+    
 }
 .container-swiper > img{
 aspect-ratio: 16/9;

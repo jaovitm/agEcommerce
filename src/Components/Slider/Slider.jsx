@@ -4,7 +4,7 @@ import "./Slider.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 
 import PROMO1 from "../../Assets/promoStarWars.jpg";
 import PROMO2 from "../../Assets/promoGaming.jpg";
@@ -25,7 +25,7 @@ const Slider = () => {
             clickable: true,
           }}
           navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Navigation]}
           className="mySwiper"
         >
           <SwiperSlide>
