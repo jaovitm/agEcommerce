@@ -36,6 +36,11 @@ body {
   overflow-x: hidden;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .container {
   width: var(--container-width);
   margin: 0 auto;

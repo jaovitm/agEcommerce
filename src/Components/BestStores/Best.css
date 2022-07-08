@@ -1,0 +1,53 @@
+.bs-container {
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bs-card {
+  width: 20rem;
+  height: max-content;
+
+  border: 2px solid var(--color-bg-variant);
+  border-radius: 0 0 1rem 1rem;
+
+  cursor: pointer;
+}
+
+.bs-card:hover{
+    border-color: var(--color-tertiary);
+    box-shadow: 0px 1px 20px -5px var(--color-tertiary);
+}
+.bs-button {
+  display: flex;
+  justify-content: center;
+}
+
+.bs-button > button{
+  margin: 2rem;
+  background-color: var(--color-tertiary);
+}
+
+
+.bs-card-content > h1 {
+  text-align: center;
+}
+
+.bs-card-content {
+  background-color: var(--color-bg-variant);
+  border-radius: 0 0 1rem 1rem;
+}
+.bs-card-banner {
+  width: 100%;
+}
+
+.bs-examples {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bs-example-img {
+  width: 100px;
+  margin: 1rem;
+  border-radius: 2rem;
+}

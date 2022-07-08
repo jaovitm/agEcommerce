@@ -5,7 +5,6 @@ import Payment from './Components/Payment/Payment';
 import Benefits from './Components/benefits/Benefits';
 import BestStores from './Components/BestStores/BestStores';
 import Footer from './Components/Footer/Footer';
-import Category from './Components/Category/Category';
 import Slider from './Components/Slider/Slider';
 import ProdCard from './Components/ProductCard/ProdCard';
 
@@ -18,7 +17,6 @@ function App() {
       <Daily />
       <Benefits />
       <BestStores />
-      <Category />
       <Footer />
     </>
   );

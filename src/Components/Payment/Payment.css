@@ -18,7 +18,7 @@
 }
 
 .pay-container:hover {
-  box-shadow: 0px 1px 20px -5px var(--color-secundary);
+  box-shadow: 0px 1px 20px -5px rgb(255, 255, 255);
 }
 
 .container-payment-all {

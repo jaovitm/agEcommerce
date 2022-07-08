@@ -1,7 +1,7 @@
 .benefits-contianer{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: center;
+    justify-items: center;
     align-items:center;
 }
 
@@ -28,3 +28,8 @@ ol > li{
     border-radius: 1rem;
 }
 
+@media screen and (max-width: 600px) {
+  .benefits-contianer{
+    grid-template-columns: 1fr;
+  }
+}

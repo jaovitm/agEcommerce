@@ -16,21 +16,19 @@ const Benefits = () => {
           <li>
             1 ano de HBO MAX grátis!
             <ol>
-              <li>
-                Acesso a todos os filmes e séries de TV favoritos da HBO, além
-                dos novos Max Originals
-              </li>
+              <li>Acesso a todos os filmes e séries de TV favoritos da HBO</li>
+              <li>Series como Chernobyl, Pacificador e Euphoria</li>
             </ol>
           </li>
         </ol>
 
         <ol>
           <li>
-            6 meses de Acesso ao Disney + Isso inclui
+            6 meses de Acesso ao Disney + 
             <ol>
               <li>Filmes da Marvel</li>
               <li>Toda a Saga Star Wars</li>
-              <li>Filmes da Pixar como Toy Story</li>
+              <li>Filmes da Pixar como Toy Story, WALL·E</li>
               <li>E muito mais!!</li>
             </ol>
           </li>
