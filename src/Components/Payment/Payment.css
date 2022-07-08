@@ -53,6 +53,10 @@
   grid-template-columns: 1fr;
   margin-top: 2rem;
 }
+
+.first, .third{
+  display: none;
+}
 }
 
 @media screen and (max-width: 600px) {
@@ -60,6 +64,9 @@
   grid-template-columns: 1fr;
     margin-top: 2rem;
 
+}
+.first, .third{
+  display: none;
 }
 .pay-container{
     margin: 1rem auto;

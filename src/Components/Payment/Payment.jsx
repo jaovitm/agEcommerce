@@ -8,7 +8,7 @@ const Payment = () => {
   return (
     <>
       <div className="container-payment-all">
-        <div className="container pay-container">
+        <div className="container pay-container first">
           <div className="card">
             <div className="card-info">
               <h1>Pagamento Rapido e Seguro</h1>
@@ -20,7 +20,7 @@ const Payment = () => {
           </div>
         </div>
 
-        <div className="container pay-container">
+        <div className="container pay-container second">
           <div className="card">
             <div className="card-info">
               <h1>Até 12x sem juros</h1>
@@ -32,7 +32,7 @@ const Payment = () => {
           </div>
         </div>
 
-        <div className="container pay-container">
+        <div className="container pay-container third">
           <div className="card">
             <div className="card-info">
               <h1>Pague com Pix</h1>

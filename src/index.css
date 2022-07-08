@@ -33,6 +33,7 @@ body {
   color: var(--color-white);
   line-height: 1.7;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  overflow-x: hidden;
 }
 
 .container {

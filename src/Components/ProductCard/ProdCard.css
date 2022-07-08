@@ -1,0 +1,79 @@
+.product-card-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+
+  position: relative;
+  right: 50%;
+
+  transition: all 1s ease-in-out;
+
+}
+
+.product-card {
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+
+  border-top: solid 3px rgb(255, 255, 255);
+  border-bottom: solid 3px rgb(255, 255, 255);
+
+  border-radius: 0.9rem;
+
+  display: grid;
+  grid-template-columns: 10rem 15rem;
+  align-items: center;
+
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.product-card > img {
+  width: 10rem;
+  padding: 1rem;
+}
+
+.product-card-details {
+  margin-left: 1.5rem;
+}
+
+.product-card-details > h1 {
+  font-size: 0.9rem;
+}
+
+.daily-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.daily-controls div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2rem 0.5rem;
+
+  background-color: var(--color-primary);
+  width: 1rem;
+  height: 1rem;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+}
+.daily-controls div button {
+  background-color: var(--color-white);
+  width: 0.4rem;
+  height: 0.4rem;
+
+  border-radius: 50%;
+
+    cursor: inherit;
+
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 600px) {
+}
