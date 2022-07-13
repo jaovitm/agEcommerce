@@ -1,0 +1,25 @@
+.ProductAd-container{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50vw;
+height: 30vw;
+}
+
+.ProductAd-container > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.ProductAd-container > div > img{
+    width: 100%;
+    height: auto;
+}
+
+.btn-cart{
+    margin-left: 1rem;
+    border: 2px solid var(--color-bg-variant);
+    color: var(--color-white);
+    background-color: transparent;
+}

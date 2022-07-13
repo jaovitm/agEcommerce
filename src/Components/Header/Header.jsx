@@ -8,11 +8,13 @@ const Header = () => {
   return (
     <>
       <div className="container header-container">
-        <img src={Logo} alt="AluraGeek Logo" className="header-Logo" />
+        <Link to="/" className="header-Logo">
+          <img src={Logo} alt="AluraGeek Logo" />
+        </Link>
         <input type="text" name="Search" id="search" />
         <div className="header-user-field">
           <Link to="/user" className="a">
-            <AiOutlineUser className="header-icons user"/>
+            <AiOutlineUser className="header-icons user" />
           </Link>
 
           <Link to="/cart" className="a">

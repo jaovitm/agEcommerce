@@ -1,0 +1,16 @@
+.store-container{
+    margin: 2rem;
+     display: grid;
+    grid-template-columns: 20vw 80vw;
+}
+
+@media screen and (max-width: 1024px) {
+ 
+
+}
+@media screen and (max-width: 600px) {
+ .store-container{
+    grid-template-columns: 100vw;
+    margin: 1rem;
+ }
+}
