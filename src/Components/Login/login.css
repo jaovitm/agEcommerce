@@ -2,7 +2,7 @@
     display: block;
     width: 60vw;
     height: 90vh;
-    margin: 2rem auto;
+    margin: 0 auto 3rem;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 1.5rem;
     padding: 1rem;
@@ -41,12 +41,12 @@
 
 .input-email, .input-password{
     color: whitesmoke;
-    background-color: #444;
+    background-color: var(--color-bg);
     width: 30rem;
     height: 3rem;
-    border: 1px solid #555;
+    border: 1.5px solid var(--color-bg-variant);
     font-family: 'Noto Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 1rem;
     
 }
