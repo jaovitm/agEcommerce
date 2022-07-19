@@ -23,3 +23,11 @@ height: 30vw;
     color: var(--color-white);
     background-color: transparent;
 }
+
+div > small > span{
+    color: var(--color-tertiary);
+}
+
+div > strong > span{
+    color: var(--color-secundary);
+}

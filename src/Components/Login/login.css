@@ -1,0 +1,87 @@
+#AccountPage-container{
+    display: block;
+    width: 60vw;
+    height: 90vh;
+    margin: 2rem auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 1.5rem;
+    padding: 1rem;
+}
+
+.img-login{
+    display: block;
+    width: 10rem;
+    height:10rem;
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+
+    margin: 2rem auto 2rem auto;
+    padding: 0.5rem;
+}
+
+.input-email-field, .input-password-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-email-field{
+    margin: 6rem 0 1.5rem;
+}
+
+.email-label, .password-label{
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+
+    background-color: #222;
+    border: 1px solid chartreuse;
+}
+
+.input-email, .input-password{
+    color: whitesmoke;
+    background-color: #444;
+    width: 30rem;
+    height: 3rem;
+    border: 1px solid #555;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem;
+    
+}
+
+input::placeholder{
+    color: rgba(240, 248, 255, 0.397);
+}
+
+.form-button{
+    width: 100px;
+    margin: 2rem auto;
+}
+
+.form-button > button{
+    margin: 0.5rem 0;
+}
+
+@media screen and (max-width:1024px) {
+
+  
+  
+}
+
+@media screen and (max-width:600px) {
+
+    #AccountPage-container{
+    width: 90vw;
+    height: max-content;
+    
+}
+
+  .input-email, .input-password{
+    width: 60vw;
+    height: 3rem;
+    
+}
+}
+  

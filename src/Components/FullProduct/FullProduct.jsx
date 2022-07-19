@@ -21,10 +21,20 @@ const FullProduct = ({data}) => {
             <img src={image} alt="" />
             <div>
               <h1>{Name}</h1>
+              <small>
+                De
+                <span className="lt"> R$ {Price}</span>
+              </small>
+              <s></s>
+              <br />
               {category === "Console" ? (
-                <strong>R$ {(Price - (Price * 10) / 100).toFixed(2)}</strong>
+                <strong>
+                  Por <span>R$ {(Price - (Price * 10) / 100).toFixed(2)}</span>
+                </strong>
               ) : (
-                <strong>R$ {(Price - (Price * 6) / 100).toFixed(2)}</strong>
+                <strong>
+                  Por <span>R$ {(Price - (Price * 6) / 100).toFixed(2)}</span>
+                </strong>
               )}
               <br /> <br />
               <p>{FullDesc}</p>
@@ -38,7 +48,7 @@ const FullProduct = ({data}) => {
       </div>
       <div>
         <h3>Produtos Similares</h3>
-        <ProdCard data={data}/>
+        <ProdCard data={data} />
       </div>
     </>
   );

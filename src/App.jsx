@@ -8,6 +8,8 @@ import Store from "./Components/StorePage/Store";
 import Footer from "./Components/Footer/Footer";
 import Slider from "./Components/Slider/Slider";
 import FullProduct from "./Components/FullProduct/FullProduct";
+import Login from "./Components/Login/Login";
+
 
 //react packages
 import { Routes, Route } from "react-router-dom";
@@ -318,16 +320,13 @@ function App() {
         if (item.id === ids[i]) {
           newDaily.push(item)
         }
-      });
+      });  
     }
 
     setDailyOffers(newDaily);
 
   }, []);
 
-  useEffect(() => {
-       console.log(dailyOffers);
-  });
 
   return (
     <>
@@ -372,6 +371,11 @@ function App() {
         />
 
         <Route path=":product" element={<FullProduct data={Products} />} />
+
+        <Route
+          path="login"
+          element={<Login/>}
+        />
       </Routes>
       <Footer />
     </>

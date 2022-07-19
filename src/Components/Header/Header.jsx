@@ -13,7 +13,7 @@ const Header = () => {
         </Link>
         <input type="text" name="Search" id="search" />
         <div className="header-user-field">
-          <Link to="/user" className="a">
+          <Link to="/login" className="a">
             <AiOutlineUser className="header-icons user" />
           </Link>
 
