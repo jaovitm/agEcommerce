@@ -9,6 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import Slider from "./Components/Slider/Slider";
 import FullProduct from "./Components/FullProduct/FullProduct";
 import Login from "./Components/Login/Login";
+import Cart from './Components/Cart/Cart'
 
 
 //react packages
@@ -372,10 +373,8 @@ function App() {
 
         <Route path=":product" element={<FullProduct data={Products} />} />
 
-        <Route
-          path="login"
-          element={<Login/>}
-        />
+        <Route path="login" element={<Login />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
       <Footer />
     </>

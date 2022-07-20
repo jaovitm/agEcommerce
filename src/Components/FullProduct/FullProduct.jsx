@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import ProdCard from "../ProductCard/ProdCard.jsx";
 import { useParams } from "react-router-dom";
-import './FullProduct.css'
+import "./FullProduct.css";
 
-const FullProduct = ({data}) => {
+const FullProduct = ({ data }) => {
   const params = useParams();
 
   const [ProductAd, setProductAd] = useState([]);
+
+  const HandleCartAdd = () => {
+    if (sessionStorage.getItem("Cart") === null) {
+      sessionStorage.setItem("Cart", JSON.stringify(ProductAd));
+    } else {
+      sessionStorage.setItem("Cart", JSON.stringify([...JSON.parse(sessionStorage.getItem("Cart")), ProductAd[0]]));
+    }
+  };
 
   useEffect(() => {
     const Active = data.filter((item) => item.Name === params.product);
@@ -41,7 +49,10 @@ const FullProduct = ({data}) => {
               <br />
               <br />
               <button className="btn btn-primary">Comprar</button>
-              <button className="btn btn-cart"> Adicionar ao Carrinho</button>
+              <button className="btn btn-cart" onClick={HandleCartAdd}>
+                {" "}
+                Adicionar ao Carrinho
+              </button>
             </div>
           </div>
         ))}

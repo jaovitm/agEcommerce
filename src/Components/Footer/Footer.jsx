@@ -55,7 +55,13 @@ const Footer = () => {
             </button>
           </form>
         </div>
-        <div className='copy'>Desenvolvido por João Vitor M. De Sá &copy; 2022</div>
+        <div className="copy">
+          Desenvolvido por{" "}
+          <a href="http://github.com/jaovitm" target='__blank'>
+            <strong>@jaovitm</strong>
+          </a>{" "}
+          &copy; 2022
+        </div>
       </div>
     </>
   );

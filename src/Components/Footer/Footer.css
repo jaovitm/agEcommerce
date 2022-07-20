@@ -59,6 +59,10 @@
     margin: 2rem;
 }
 
+.copy > a > strong{
+    color: var(--color-primary);
+}
+
 
 @media screen and (max-width: 1024px) {
  .footer-container{
