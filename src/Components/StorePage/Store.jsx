@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Product from "../Product/Product";
 import './Store.css'
 
 const Store = ({category, data}) => {
 
   const [ActiveProducts, setActiveProducts] = useState([]);
+
+  const history = useNavigate();
+
+  function handleAddProduct() {
+    history("/Adicionar Produto");
+  }
 
   useEffect(()=>{
     
@@ -20,6 +27,10 @@ const Store = ({category, data}) => {
         <div>
           <h1>{category}</h1>
           <h5>{results} resultados encontrados</h5>
+
+          <button className="btn btn-primary" onClick={handleAddProduct}>
+            Adicionar Produto
+          </button>
         </div>
         <div>
           {ActiveProducts.map(({ id, category, image, Name, Price, Desc }) => (

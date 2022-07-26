@@ -9,8 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import Slider from "./Components/Slider/Slider";
 import FullProduct from "./Components/FullProduct/FullProduct";
 import Login from "./Components/Login/Login";
-import Cart from './Components/Cart/Cart'
-
+import Cart from "./Components/Cart/Cart";
 
 //react packages
 import { Routes, Route } from "react-router-dom";
@@ -39,11 +38,10 @@ import CS4 from "./Assets/Console/CS4.png";
 import CS5 from "./Assets/Console/CS5.png";
 import CS6 from "./Assets/Console/CS6.png";
 
-
 function App() {
-
   let ids = [];
-  let newDaily = []
+  let newDaily = [];
+ 
 
   const [Products, setProducts] = useState([
     {
@@ -310,8 +308,8 @@ function App() {
     for (let i = 0; i <= 5; i++) {
       gerarid(ids, Products[random(1, 18)].id);
     }
-
   };
+
 
   useEffect(() => {
     dailyoffers();
@@ -319,15 +317,13 @@ function App() {
     for (let i = 0; i < ids.length; i++) {
       Products.map((item) => {
         if (item.id === ids[i]) {
-          newDaily.push(item)
+          newDaily.push(item);
         }
-      });  
+      });
     }
 
     setDailyOffers(newDaily);
-
   }, []);
-
 
   return (
     <>
@@ -375,6 +371,7 @@ function App() {
 
         <Route path="login" element={<Login />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="Adicionar%20Produto" element={<AddProduct />} />
       </Routes>
       <Footer />
     </>

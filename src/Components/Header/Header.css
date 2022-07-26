@@ -48,7 +48,6 @@
   border-radius: 50%;
 }
 
-
 @media screen and (max-width: 1024px) {
     .header-container {
   grid-template-columns: 1fr;

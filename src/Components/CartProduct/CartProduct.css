@@ -50,9 +50,9 @@
 
 }
 @media screen and (max-width: 600px) {
- .product-container{
+ .Cardproduct-container{
     grid-template-columns: 1fr;
-    width: 90vw;
-    padding: 1rem;
- }
+    min-width: 100%;
+    width: fit-content;
+}
 }

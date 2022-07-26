@@ -4,7 +4,8 @@ import Logo from '../../Assets/Logo.png'
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({qtd}) => {
+ 
   return (
     <>
       <div className="container header-container">
@@ -17,7 +18,8 @@ const Header = () => {
             <AiOutlineUser className="header-icons user" />
           </Link>
 
-          <Link to="/cart" className="a">
+          <Link to="/cart" className="a cart">
+            <span>{qtd}</span>
             <AiOutlineShoppingCart className="header-icons" />
           </Link>
         </div>

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CartProduct from "../CartProduct/CartProduct.jsx";
 import "./Cart.css";
 
 const Cart = () => {
 
   const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem("Cart")));
+
+  setInterval(()=>{
+    setCart(JSON.parse(sessionStorage.getItem("Cart")));
+    
+  },500)
   
-useEffect(() => {
-  setCart(JSON.parse(sessionStorage.getItem("Cart")));
-}, []);
-
-
+  
   let finalPrices;
   let total;
   let prices;
@@ -39,9 +40,6 @@ return (
      finalPrices = prices.map((item) => Number(item));
      total = finalPrices.reduce((acc, item) => acc + item);
 
- 
-
-
 
 return (
   <div className="container Cart-container">
@@ -60,7 +58,7 @@ return (
     ))}
 
     <div>
-      <h2>Total: R$ {total} </h2>
+      <h2>Total: R$ {total.toFixed(2)} </h2>
       <button className="btn btn-primary">Finalizar Compra</button>
     </div>
   </div>

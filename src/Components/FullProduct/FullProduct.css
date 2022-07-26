@@ -31,3 +31,26 @@ div > small > span{
 div > strong > span{
     color: var(--color-secundary);
 }
+
+@media screen and (max-width: 1024px) {
+  .ProductAd-container{
+width: auto;
+height: auto;
+padding: 1rem;
+margin-bottom: 3rem;
+}
+
+}
+
+@media screen and (max-width: 600px) {
+  .ProductAd-container{
+width: auto;
+height: auto;
+padding: 1rem;
+margin-bottom: 3rem;
+
+}
+.ProductAd-container > div {
+    grid-template-columns: 1fr;
+}
+}

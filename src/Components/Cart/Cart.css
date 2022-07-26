@@ -5,6 +5,6 @@
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 1.5rem;
     padding: 1rem;
-    
+    transition: all 700ms ease;
 }
 
