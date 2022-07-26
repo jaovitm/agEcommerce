@@ -10,6 +10,8 @@ import Slider from "./Components/Slider/Slider";
 import FullProduct from "./Components/FullProduct/FullProduct";
 import Login from "./Components/Login/Login";
 import Cart from "./Components/Cart/Cart";
+import AddProduct from "./Components/AddProduct/AddProduct";
+
 
 //react packages
 import { Routes, Route } from "react-router-dom";
@@ -371,7 +373,10 @@ function App() {
 
         <Route path="login" element={<Login />} />
         <Route path="cart" element={<Cart />} />
-        <Route path="Adicionar%20Produto" element={<AddProduct />} />
+        <Route
+          path="Adicionar%20Produto"
+          element={<AddProduct Products={Products} setProducts={setProducts} />}
+        />
       </Routes>
       <Footer />
     </>

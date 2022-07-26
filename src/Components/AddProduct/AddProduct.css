@@ -1,0 +1,68 @@
+.AddProduct-container {
+  width: 90vw;
+  height: max-content;
+  margin: 0 auto 3rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  transition: all 700ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addProductForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.addProductForm input,
+.addProductForm select,
+.addProductForm textarea {
+  width: 30rem;
+  height: 2.4rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-bg);
+  margin: 1rem 0;
+  padding: 1rem;
+  color: white;
+  font-size: 0.8rem;
+  border: 2px solid var(--color-bg-variant);
+}
+
+.addProductForm textarea{
+    height: 5rem;
+}
+
+.addProductForm select{
+    padding: 0;
+}
+
+#ProductImage{
+    height: auto;
+    width: fit-content;
+}
+
+input::placeholder {
+  color: rgb(129, 119, 119);
+}
+
+input[type='file'] {
+  display: none
+}
+
+.productImageLabel {
+  background-color: var(--color-bg-variant);
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  padding: 6px 20px
+}
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 600px) {
+}
