@@ -1,21 +1,13 @@
 import React from "react";
 import "./AddProduct.css";
-import { v4 as uuidv4 } from "uuid";
 
 const AddProduct = ({ updateProducts }) => {
-  const productName = document.querySelector("#productName");
-  const productPrice = document.querySelector("#productPrice");
-  const productImageURL = document.querySelector("#ProductImage-URL");
-  const productImage = document.querySelector("#productImage");
   var img;
-  const productDesc = document.querySelector("#productDesc");
-  const productCategory = document.querySelector("#productCategory");
-
   const reader = new FileReader();
-
   let formisCorrect = false;
 
   const openFile = (event) => {
+    const productImageURL = document.querySelector("#ProductImage-URL");
     var input = event.target;
 
     reader.onload = function () {
@@ -31,6 +23,7 @@ const AddProduct = ({ updateProducts }) => {
   };
 
   const openURL = (e) => {
+    const productImage = document.querySelector("#productImage");
     var output = document.getElementById("output");
     output.src = e.target.value;
     img = e.target.value;
@@ -38,15 +31,14 @@ const AddProduct = ({ updateProducts }) => {
   };
 
   const handleProductAdd = (e) => {
-    e.preventDefault();
+    const productName = document.querySelector("#productName");
+    const productPrice = document.querySelector("#productPrice");
+    const productImageURL = document.querySelector("#ProductImage-URL");
+    const productImage = document.querySelector("#productImage");
+    const productDesc = document.querySelector("#productDesc");
+    const productCategory = document.querySelector("#productCategory");
 
-    console.log(
-      productName.value,
-      productPrice.value,
-      productDesc.value,
-      productImage.value,
-      productImageURL.value
-    );
+    e.preventDefault();
 
     if (formisCorrect == false) {
       let status = [];
@@ -80,8 +72,8 @@ const AddProduct = ({ updateProducts }) => {
             img,
             productName.value,
             productPrice.value,
-            productDesc.value,
-        )
+            productDesc.value
+          )
         : alert("Por favor Preencha os campos de maneira correta!");
     }
   };
@@ -92,15 +84,15 @@ const AddProduct = ({ updateProducts }) => {
       <img id="output" />
 
       <form className="addProductForm">
-        <label htmlFor="productImage" className="productImageLabel">
-          Selecionar um arquivo &#187;
-        </label>
         <input
           id="productImage"
           type="file"
           accept="image/*"
           onChange={openFile}
         ></input>
+        <label htmlFor="productImage" className="productImageLabel">
+          Selecionar um arquivo &#187;
+        </label>
 
         <label htmlFor="productImage-URL">Ou cole aqui a URL da imagem</label>
         <input

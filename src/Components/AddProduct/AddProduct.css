@@ -57,7 +57,7 @@ input[type='file'] {
   display: none
 }
 
-input:disabled{
+input:disabled, #productImage[disabled="disabled"] + .productImageLabel{
     background: rgba(128, 128, 128, 0.349);
     cursor: no-drop;
 }
