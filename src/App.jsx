@@ -43,190 +43,217 @@ import CS6 from "./Assets/Console/CS6.png";
 function App() {
   let ids = [];
   let newDaily = [];
- 
 
-  const [Products, setProducts] = useState([
-    {
-      id: 1,
-      category: "StarWars",
-      image: SW1,
-      Name: "Boneco Dart Maul",
-      Price: 109.9,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 2,
-      category: "StarWars",
-      image: SW2,
-      Name: "Boneco Storm Trooper",
-      Price: 119.9,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 3,
-      category: "StarWars",
-      image: SW3,
-      Name: "Balde Pipoca Storm Trooper Head",
-      Price: 65.3,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 4,
-      category: "StarWars",
-      image: SW4,
-      Name: "Miniaturas em Lego",
-      Price: 159.2,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 5,
-      category: "StarWars",
-      image: SW5,
-      Name: "Action Figure Yoda",
-      Price: 95.2,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 6,
-      category: "StarWars",
-      image: SW6,
-      Name: "Baby Yoda Toy",
-      Price: 150.85,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 7,
-      category: "Console",
-      image: CS1,
-      Name: "Manete Xbox One",
-      Price: 367.9,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 8,
-      category: "Console",
-      image: CS2,
-      Name: "PlayStation 5 - 1TB",
-      Price: 5500.3,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 9,
-      category: "Console",
-      image: CS3,
-      Name: "Gameboy",
-      Price: 2500.5,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 10,
-      category: "Console",
-      image: CS4,
-      Name: "Manete Nintendo Switch",
-      Price: 400.5,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 11,
-      category: "Console",
-      image: CS5,
-      Name: "Xbox Series X",
-      Price: 5600.7,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 12,
-      category: "Console",
-      image: CS6,
-      Name: "Nintendo NES",
-      Price: 1200.0,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 13,
-      category: "Diversos",
-      image: DV1,
-      Name: "Camiseta Manete",
-      Price: 60.52,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 14,
-      category: "Diversos",
-      image: DV2,
-      Name: "Poster Atari",
-      Price: 125.39,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 15,
-      category: "Diversos",
-      image: DV3,
-      Name: "Relogio com Radio",
-      Price: 125.32,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 16,
-      category: "Diversos",
-      image: DV4,
-      Name: "Óculos de Realidade Virtual - Quest 2",
-      Price: 2200.0,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 17,
-      category: "Diversos",
-      image: DV5,
-      Name: "Fantasia Pikachu",
-      Price: 563.0,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-    {
-      id: 18,
-      category: "Diversos",
-      image: DV6,
-      Name: "Boneco Sonic",
-      Price: 55.5,
-      Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      FullDesc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-    },
-  ]);
+  const initialStorage = () => {
+    const initialProducts = [
+      {
+        id: 1,
+        category: "StarWars",
+        image: SW1,
+        Name: "Boneco Dart Maul",
+        Price: 109.9,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 2,
+        category: "StarWars",
+        image: SW2,
+        Name: "Boneco Storm Trooper",
+        Price: 119.9,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 3,
+        category: "StarWars",
+        image: SW3,
+        Name: "Balde Pipoca Storm Trooper Head",
+        Price: 65.3,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 4,
+        category: "StarWars",
+        image: SW4,
+        Name: "Miniaturas em Lego",
+        Price: 159.2,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 5,
+        category: "StarWars",
+        image: SW5,
+        Name: "Action Figure Yoda",
+        Price: 95.2,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 6,
+        category: "StarWars",
+        image: SW6,
+        Name: "Baby Yoda Toy",
+        Price: 150.85,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 7,
+        category: "Console",
+        image: CS1,
+        Name: "Manete Xbox One",
+        Price: 367.9,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 8,
+        category: "Console",
+        image: CS2,
+        Name: "PlayStation 5 - 1TB",
+        Price: 5500.3,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 9,
+        category: "Console",
+        image: CS3,
+        Name: "Gameboy",
+        Price: 2500.5,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 10,
+        category: "Console",
+        image: CS4,
+        Name: "Manete Nintendo Switch",
+        Price: 400.5,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 11,
+        category: "Console",
+        image: CS5,
+        Name: "Xbox Series X",
+        Price: 5600.7,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 12,
+        category: "Console",
+        image: CS6,
+        Name: "Nintendo NES",
+        Price: 1200.0,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 13,
+        category: "Diversos",
+        image: DV1,
+        Name: "Camiseta Manete",
+        Price: 60.52,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 14,
+        category: "Diversos",
+        image: DV2,
+        Name: "Poster Atari",
+        Price: 125.39,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 15,
+        category: "Diversos",
+        image: DV3,
+        Name: "Relogio com Radio",
+        Price: 125.32,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 16,
+        category: "Diversos",
+        image: DV4,
+        Name: "Óculos de Realidade Virtual - Quest 2",
+        Price: 2200.0,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 17,
+        category: "Diversos",
+        image: DV5,
+        Name: "Fantasia Pikachu",
+        Price: 563.0,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+      {
+        id: 18,
+        category: "Diversos",
+        image: DV6,
+        Name: "Boneco Sonic",
+        Price: 55.5,
+        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        FullDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
+      },
+    ]; ;
+    
+
+    if (sessionStorage.getItem("Products") === null) {
+      sessionStorage.setItem("Products", JSON.stringify(initialProducts));
+    } else {
+      sessionStorage.setItem(
+        "Products",
+        JSON.stringify([
+          ...JSON.parse(sessionStorage.getItem("Products")),
+          initialProducts,
+        ])
+      );
+    }
+
+  };
+
+
+  if (sessionStorage.getItem("Products") === null) {
+    Window.onload = initialStorage();
+  }
+ 
+    const [Products, setProducts] = useState(
+      JSON.parse(sessionStorage.getItem("Products"))
+    );
+
+  
+
 
   const [dailyOffers, setDailyOffers] = useState([
     {
@@ -312,6 +339,26 @@ function App() {
     }
   };
 
+  const updateProducts = (category,img,name,price,desc) => {
+
+    const newProduct = [
+      ...Products,
+      {
+        id: uuidv4(),
+        category: category,
+        image: img,
+        Name: name,
+        Price: Number(price),
+        Desc: desc,
+        FullDesc: desc,
+      },
+    ];
+
+
+    sessionStorage.setItem("Products", JSON.stringify(newProduct));
+    setProducts(JSON.parse(sessionStorage.getItem("Products")));
+
+  };
 
   useEffect(() => {
     dailyoffers();
@@ -375,7 +422,7 @@ function App() {
         <Route path="cart" element={<Cart />} />
         <Route
           path="Adicionar%20Produto"
-          element={<AddProduct Products={Products} setProducts={setProducts} />}
+          element={<AddProduct updateProducts={updateProducts} />}
         />
       </Routes>
       <Footer />

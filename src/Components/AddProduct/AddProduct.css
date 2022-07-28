@@ -45,12 +45,21 @@
     width: fit-content;
 }
 
+#output{
+    width: 500px;
+}
+
 input::placeholder {
   color: rgb(129, 119, 119);
 }
 
 input[type='file'] {
   display: none
+}
+
+input:disabled{
+    background: rgba(128, 128, 128, 0.349);
+    cursor: no-drop;
 }
 
 .productImageLabel {
@@ -61,6 +70,8 @@ input[type='file'] {
   margin: 10px;
   padding: 6px 20px
 }
+
+
 @media screen and (max-width: 1024px) {
 }
 

@@ -57,7 +57,7 @@ const ProdCard = ({ data }) => {
                 <h1>
                   <strong>{Name}</strong>
                 </h1>
-                <small>R$ {Price}</small> <br />
+                <small>R$ {Price.toFixed(2)}</small> <br />
                 <small>{Desc}</small> <br />
                 <button className="btn btn-primary">Comprar</button>
               </div>

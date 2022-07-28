@@ -1,83 +1,89 @@
-import React from 'react'
-import './AddProduct.css'
+import React from "react";
+import "./AddProduct.css";
 import { v4 as uuidv4 } from "uuid";
 
+const AddProduct = ({ updateProducts }) => {
+  const productName = document.querySelector("#productName");
+  const productPrice = document.querySelector("#productPrice");
+  const productImageURL = document.querySelector("#ProductImage-URL");
+  const productImage = document.querySelector("#productImage");
+  var img;
+  const productDesc = document.querySelector("#productDesc");
+  const productCategory = document.querySelector("#productCategory");
 
-const AddProduct = ({ Products, setProducts }) => {
-    const productName = document.querySelector("#productName");
-    const productPrice = document.querySelector("#productPrice");
-    const productImageURL = document.querySelector("#ProductImage-URL");
-    const productImage = document.querySelector("#productImage");
-    var img;
-    const productDesc = document.querySelector("#productDesc");
-    const productCategory = document.querySelector("#productCategory");
-    const reader = new FileReader();
+  const reader = new FileReader();
 
-    var status = false
+  let formisCorrect = false;
 
-    const openFile = (event) => {
-      var input = event.target;
+  const openFile = (event) => {
+    var input = event.target;
 
-      reader.onload = function () {
-        var dataURL = reader.result;
-        var output = document.getElementById("output");
-        output.src = dataURL;
-        img = dataURL
-      };
-      
-      reader.readAsDataURL(input.files[0]);
+    reader.onload = function () {
+      var dataURL = reader.result;
+      var output = document.getElementById("output");
+      output.src = dataURL;
+      img = dataURL;
     };
 
-    const openURL = (e) =>{
-        var output = document.getElementById("output");
-        output.src = e.target.value;
-    }
+    reader.readAsDataURL(input.files[0]);
 
-    
+    productImageURL.setAttribute("disabled", "disabled");
+  };
+
+  const openURL = (e) => {
+    var output = document.getElementById("output");
+    output.src = e.target.value;
+    img = e.target.value;
+    productImage.setAttribute("disabled", "disabled");
+  };
 
   const handleProductAdd = (e) => {
     e.preventDefault();
-    
-    if(status == false){
-        productName.value ? console.log("Ok") : alert("Preencha corretamente os campos, o nome do produto é obrigatório")
-        productPrice.value
-          ? console.log("Ok")
-          : alert(
-              "Preencha corretamente os campos, o valor do produto é obrigatório"
-            );
-        productDesc.value
-          ? console.log("Ok")
-          : alert(
-              "Preencha corretamente os campos, a descrição do produto é obrigatória"
-            );
-        productImage.value
-          ? console.log("Ok")
-          : productImageURL.value
-          ? console.log("Ok")
-          : alert(
-              "Preencha corretamente os campos, a imagem do produto é obrigatória"
-            );
-        
+
+    console.log(
+      productName.value,
+      productPrice.value,
+      productDesc.value,
+      productImage.value,
+      productImageURL.value
+    );
+
+    if (formisCorrect == false) {
+      let status = [];
+      productName.value
+        ? status.push("Ok")
+        : alert(
+            "Preencha corretamente os campos, o nome do produto é obrigatório"
+          );
+      productPrice.value
+        ? status.push("Ok")
+        : alert(
+            "Preencha corretamente os campos, o valor do produto é obrigatório"
+          );
+      productDesc.value
+        ? status.push("Ok")
+        : alert(
+            "Preencha corretamente os campos, a descrição do produto é obrigatória"
+          );
+
+      productImage.value
+        ? status.push("Ok")
+        : productImageURL.value
+        ? status.push("Ok")
+        : alert(
+            "Preencha corretamente os campos, a imagem do produto é obrigatória"
+          );
+
+      status.length === 4
+        ? updateProducts(
+            productCategory.selectedOptions[0].value,
+            img,
+            productName.value,
+            productPrice.value,
+            productDesc.value,
+        )
+        : alert("Por favor Preencha os campos de maneira correta!");
     }
-
-
-    const newProduct = [
-      ...Products,
-      {
-        id: uuidv4(),
-        category: productCategory.selectedOptions[0].value,
-        image: productImage.value ? productImage.value : img,
-        Name: "Boneco Dart Maul",
-        Price: 109.9,
-        Desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-        FullDesc:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
-      },
-    ];
-
-
-
-
   };
 
   return (
@@ -151,4 +157,4 @@ const AddProduct = ({ Products, setProducts }) => {
   );
 };
 
-export default AddProduct
+export default AddProduct;
