@@ -240,13 +240,13 @@ function App() {
     }
   };
 
-  const [Products, setProducts] = useState(
-    JSON.parse(sessionStorage.getItem("Products"))
-  );
-
   if (sessionStorage.getItem("Products") === null) {
     Window.onload = initialStorage();
   }
+
+  const [Products, setProducts] = useState(
+    JSON.parse(sessionStorage.getItem("Products"))
+  );
 
   const [dailyOffers, setDailyOffers] = useState([
     {
@@ -325,7 +325,6 @@ function App() {
   };
 
   const dailyoffers = () => {
-    setDailyOffers([]);
 
     for (let i = 0; i <= 5; i++) {
       gerarid(ids, Products[random(1, 18)].id);
