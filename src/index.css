@@ -62,7 +62,7 @@ img{
 }
 
 .a:hover{
-  color: var(--color-primary-variant);
+  color: var(--color-primary);
 }
 
 .btn{

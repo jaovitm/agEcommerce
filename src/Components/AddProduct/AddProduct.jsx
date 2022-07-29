@@ -37,6 +37,7 @@ const AddProduct = ({ updateProducts }) => {
     const productImage = document.querySelector("#productImage");
     const productDesc = document.querySelector("#productDesc");
     const productCategory = document.querySelector("#productCategory");
+    const modal = document.querySelector(".addProductModal");
 
     e.preventDefault();
 
@@ -66,86 +67,109 @@ const AddProduct = ({ updateProducts }) => {
             "Preencha corretamente os campos, a imagem do produto é obrigatória"
           );
 
-      status.length === 4
-        ? updateProducts(
-            productCategory.selectedOptions[0].value,
-            img,
-            productName.value,
-            productPrice.value,
-            productDesc.value
-          )
-        : alert("Por favor Preencha os campos de maneira correta!");
+      if (status.length === 4) {
+        updateProducts(
+          productCategory.selectedOptions[0].value,
+          img,
+          productName.value,
+          productPrice.value,
+          productDesc.value
+        );
+        modal.classList.add("show-modal");
+      }else{
+        alert("Por favor Preencha os campos de maneira correta!");
+      }
     }
   };
 
+  const closeModal = () => {
+    const modal = document.querySelector(".addProductModal");
+    const form = document.querySelector(".addProductForm");
+    const output = document.getElementById("output");
+
+    modal.classList.remove("show-modal");
+    output.src = "";
+    form.reset();
+  };
+
   return (
-    <div className="container AddProduct-container">
-      <h1>Adicionar Novo Produto</h1>
-      <img id="output" />
+    <>
+      <div className="container AddProduct-container">
+        <h1>Adicionar Novo Produto</h1>
+        <img id="output" />
 
-      <form className="addProductForm">
-        <input
-          id="productImage"
-          type="file"
-          accept="image/*"
-          onChange={openFile}
-        ></input>
-        <label htmlFor="productImage" className="productImageLabel">
-          Selecionar um arquivo &#187;
-        </label>
+        <form className="addProductForm">
+          <input
+            id="productImage"
+            type="file"
+            accept="image/*"
+            onChange={openFile}
+          ></input>
+          <label htmlFor="productImage" className="productImageLabel">
+            Selecionar um arquivo &#187;
+          </label>
 
-        <label htmlFor="productImage-URL">Ou cole aqui a URL da imagem</label>
-        <input
-          type="url"
-          name="productImage-URL"
-          id="ProductImage-URL"
-          placeholder="https://linkdaimagem.com.br"
-          onChange={openURL}
-        />
+          <label htmlFor="productImage-URL">Ou cole aqui a URL da imagem</label>
+          <input
+            type="url"
+            name="productImage-URL"
+            id="ProductImage-URL"
+            placeholder="https://linkdaimagem.com.br"
+            onChange={openURL}
+          />
 
-        <label htmlFor="productCategory">Categoria</label>
-        <select name="productCategory" id="productCategory" required>
-          <option value="StarWars">Star Wars</option>
-          <option value="Console">Console</option>
-          <option value="Diversos">Diversos</option>
-        </select>
+          <label htmlFor="productCategory">Categoria</label>
+          <select name="productCategory" id="productCategory" required>
+            <option value="StarWars">Star Wars</option>
+            <option value="Console">Console</option>
+            <option value="Diversos">Diversos</option>
+          </select>
 
-        <label htmlFor="productName">Nome do Produto</label>
-        <input
-          type="text"
-          name="productName"
-          id="productName"
-          placeholder="Funko Pop Dart Vader"
-          maxLength="20"
-          required
-        />
+          <label htmlFor="productName">Nome do Produto</label>
+          <input
+            type="text"
+            name="productName"
+            id="productName"
+            placeholder="Funko Pop Dart Vader"
+            maxLength="20"
+            required
+          />
 
-        <label htmlFor="productPrice">Preço</label>
-        <input
-          type="number"
-          name="productPrice"
-          id="productPrice"
-          placeholder="60.25"
-          required
-        />
+          <label htmlFor="productPrice">Preço</label>
+          <input
+            type="number"
+            name="productPrice"
+            id="productPrice"
+            placeholder="60.25"
+            required
+          />
 
-        <label htmlFor="productDesc">Descrição</label>
-        <textarea
-          name="productDesc"
-          id="productDesc"
-          placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique iure porro est alias a hic quod saepe delectus iusto. Nobis eveniet cupiditate ea ipsa reprehenderit vero eum deleniti. Quis, mollitia?"
-          maxLength="150"
-          required
-        ></textarea>
-        <button
-          type="submit"
-          className="btn btn-primary"
-          onClick={handleProductAdd}
-        >
-          Adicionar Produto
-        </button>
-      </form>
-    </div>
+          <label htmlFor="productDesc">Descrição</label>
+          <textarea
+            name="productDesc"
+            id="productDesc"
+            placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique iure porro est alias a hic quod saepe delectus iusto. Nobis eveniet cupiditate ea ipsa reprehenderit vero eum deleniti. Quis, mollitia?"
+            maxLength="150"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={handleProductAdd}
+          >
+            Adicionar Produto
+          </button>
+        </form>
+      </div>
+      <div className="addProductModal">
+        <h1 className="modal-content">
+          Obrigado, Produto adicionado com sucesso!
+        </h1>
+        <span className="close-button" onClick={closeModal}>
+          X
+        </span>
+      </div>
+    </>
   );
 };
 

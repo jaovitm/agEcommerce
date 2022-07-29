@@ -12,7 +12,6 @@ import Login from "./Components/Login/Login";
 import Cart from "./Components/Cart/Cart";
 import AddProduct from "./Components/AddProduct/AddProduct";
 
-
 //react packages
 import { Routes, Route } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -226,8 +225,7 @@ function App() {
         FullDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eveniet, sint saepe quisquam aliquid repellendus iure similique adipisci harum nesciunt ex? Odio officiis impedit, maiores iure libero autem quos quis?",
       },
-    ]; ;
-    
+    ];
 
     if (sessionStorage.getItem("Products") === null) {
       sessionStorage.setItem("Products", JSON.stringify(initialProducts));
@@ -240,20 +238,15 @@ function App() {
         ])
       );
     }
-
   };
 
+  const [Products, setProducts] = useState(
+    JSON.parse(sessionStorage.getItem("Products"))
+  );
 
   if (sessionStorage.getItem("Products") === null) {
     Window.onload = initialStorage();
   }
- 
-    const [Products, setProducts] = useState(
-      JSON.parse(sessionStorage.getItem("Products"))
-    );
-
-  
-
 
   const [dailyOffers, setDailyOffers] = useState([
     {
@@ -339,8 +332,7 @@ function App() {
     }
   };
 
-  const updateProducts = (category,img,name,price,desc) => {
-
+  const updateProducts = (category, img, name, price, desc) => {
     const newProduct = [
       ...Products,
       {
@@ -354,11 +346,10 @@ function App() {
       },
     ];
 
-
     sessionStorage.setItem("Products", JSON.stringify(newProduct));
     setProducts(JSON.parse(sessionStorage.getItem("Products")));
-
   };
+
 
   useEffect(() => {
     dailyoffers();
@@ -376,7 +367,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header Products={Products} />
       <Routes>
         <Route
           exact

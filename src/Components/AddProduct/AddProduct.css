@@ -32,34 +32,35 @@
   border: 2px solid var(--color-bg-variant);
 }
 
-.addProductForm textarea{
-    height: 5rem;
+.addProductForm textarea {
+  height: 5rem;
 }
 
-.addProductForm select{
-    padding: 0;
+.addProductForm select {
+  padding: 0;
 }
 
-#ProductImage{
-    height: auto;
-    width: fit-content;
+#ProductImage {
+  height: auto;
+  width: fit-content;
 }
 
-#output{
-    width: 500px;
+#output {
+  width: 500px;
 }
 
 input::placeholder {
   color: rgb(129, 119, 119);
 }
 
-input[type='file'] {
-  display: none
+input[type="file"] {
+  display: none;
 }
 
-input:disabled, #productImage[disabled="disabled"] + .productImageLabel{
-    background: rgba(128, 128, 128, 0.349);
-    cursor: no-drop;
+input:disabled,
+#productImage[disabled="disabled"] + .productImageLabel {
+  background: rgba(128, 128, 128, 0.349);
+  cursor: no-drop;
 }
 
 .productImageLabel {
@@ -68,12 +69,83 @@ input:disabled, #productImage[disabled="disabled"] + .productImageLabel{
   color: #fff;
   cursor: pointer;
   margin: 10px;
-  padding: 6px 20px
+  padding: 6px 20px;
 }
 
+.addProductModal {
+  position: fixed;
+  padding: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-bg-variant);
+  color: black;
+  transform: scale(1.1);
+  opacity: 0;
+    visibility: hidden;
+  transition: visibility 0.25s ease-in-out, transform 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+}
+
+.modal-content {
+  justify-content: center;
+  background-color: whitesmoke;
+  padding: 30px;
+  width: 50vw;
+  border-radius: 0.5rem;
+}
+
+.close-button {
+  position: relative;
+  top: -3vw;
+  left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  text-align: justify;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  line-height: 24px;
+  border-radius: 50%;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
 
 @media screen and (max-width: 1024px) {
 }
 
 @media screen and (max-width: 600px) {
+  .AddProduct-container {
+    width: auto;
+  }
+  .addProductForm input,
+  .addProductForm select,
+  .addProductForm textarea {
+    width: 90vw;
+  }
+  .addProductForm textarea {
+    height: 20vh;
+  }
+
+  .addProductModal {
+  flex-direction: column-reverse;
+}
+
+.modal-content {
+  width: 70vw;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
 }
