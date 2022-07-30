@@ -31,35 +31,34 @@
   font-display: swap;
 }
 
-.search-results{
+.search-results {
   z-index: 1000;
-  width: 30%;
   overflow-y: scroll;
   grid-column-start: 1;
   grid-column-end: 4;
   justify-self: center;
-background-color: var(--color-bg) ;
- color: var(--color-bg);
+  background-color: var(--color-bg);
+  color: var(--color-bg);
 }
 
-.height{
+.height {
   height: 50vh;
 }
 
 .search-results a {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin: 1rem;
- padding: 1rem;
-border: 1px solid var(--color-primary);
-background-color: transparent;
-backdrop-filter: blur(5px);
-border-radius: 0.5rem;
-color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-primary);
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  border-radius: 0.5rem;
+  color: white;
 }
 .search-results a img {
-width: 100px;
+  width: 100px;
 }
 
 .header-user-field {
@@ -72,45 +71,66 @@ width: 100px;
 
   height: 2rem;
   width: auto;
-
 }
 
-.user{
-    border: 2px solid;
+.user {
+  border: 2px solid;
   border-radius: 50%;
 }
 
+  .search-results::-webkit-scrollbar{
+  width: 10px;
+}
+.search-results::-webkit-scrollbar-thumb{
+  background-color: var(--color-bg-variant);
+  
+}
+
 @media screen and (max-width: 1024px) {
-    .header-container {
-  grid-template-columns: 1fr;
-  height: auto;
-}
+  .header-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 
-.header-Logo {
-  margin-top: 2rem;
-}
+  .header-Logo {
+    margin-top: 2rem;
+  }
 
-#search{
-margin: 2rem 0 0;
-}
+  #search {
+    margin: 2rem 0 0;
+  }
+
+  .search-results {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: fit-content;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .header-container {
-  grid-template-columns: 1fr;
-  height: auto;
-}
+  .header-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 
-.search-container{
-width: 75%;
-height: fit-content;
-}
+  .search-container {
+    width: 75%;
+    height: fit-content;
+  }
 
-#search{
-margin: 2rem 0 0;
-}
+  #search {
+    margin: 2rem 0 0;
+  }
 
-.header-Logo {
-  margin-top: 2rem;
-}
+  .header-Logo {
+    margin-top: 2rem;
+  }
+
+  .search-results {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: fit-content;
+  }
+
+
 }

@@ -4,6 +4,7 @@ justify-content: center;
 align-items: center;
 width: 50vw;
 height: 30vw;
+margin-top: 1rem;
 }
 
 .ProductAd-container > div {
@@ -24,6 +25,21 @@ height: 30vw;
     background-color: transparent;
 }
 
+.btn-delete{
+    width: 6rem;
+    margin-left: calc(50% - 5rem);
+    margin-top: 1rem;
+    border: 2px solid var(--color-bg-variant);
+    color: var(--color-tertiary);
+    background-color: transparent;
+}
+
+.btn-delete:hover{
+        background-color: rgb(99, 4, 4);
+        color: var(--color-white);
+
+}
+
 div > small > span{
     color: var(--color-tertiary);
 }
@@ -40,6 +56,11 @@ padding: 1rem;
 margin-bottom: 3rem;
 }
 
+.btn-delete{
+    width: fit-content;
+    margin-left: 1rem;
+}
+
 }
 
 @media screen and (max-width: 600px) {
@@ -52,5 +73,9 @@ margin-bottom: 3rem;
 }
 .ProductAd-container > div {
     grid-template-columns: 1fr;
+}
+.btn-delete{
+    width: fit-content;
+    margin-left: 1rem;
 }
 }

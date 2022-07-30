@@ -16,6 +16,8 @@ import AddProduct from "./Components/AddProduct/AddProduct";
 import { Routes, Route } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 // Imagens usadas no projeto
 import SW1 from "./Assets/StarWars/SW1.png";
@@ -348,6 +350,26 @@ function App() {
     sessionStorage.setItem("Products", JSON.stringify(newProduct));
     setProducts(JSON.parse(sessionStorage.getItem("Products")));
   };
+    
+  const history = useNavigate();
+
+  const HandleDelete = (id) => {
+    const deleted = Products.filter(item => item.id != id )
+    
+    sessionStorage.setItem("Products", JSON.stringify(deleted));
+    setProducts(JSON.parse(sessionStorage.getItem("Products")));
+
+    history("/");
+
+    const modal = document.querySelector(".removeProductModal");
+    modal.classList.add("show-modal");
+    
+  };
+
+  const closeModal = () => {
+    const modal = document.querySelector(".removeProductModal");
+    modal.classList.remove("show-modal");
+  };
 
 
   useEffect(() => {
@@ -406,7 +428,10 @@ function App() {
           }
         />
 
-        <Route path=":product" element={<FullProduct data={Products} />} />
+        <Route
+          path=":product"
+          element={<FullProduct data={Products} HandleDelete={HandleDelete} />}
+        />
 
         <Route path="login" element={<Login />} />
         <Route path="cart" element={<Cart />} />
@@ -415,6 +440,16 @@ function App() {
           element={<AddProduct updateProducts={updateProducts} />}
         />
       </Routes>
+
+      <div className="removeProductModal">
+        <h1 className="modal-content">
+          Produto deletado com sucesso!
+        </h1>
+        <span className="close-button" onClick={closeModal}>
+          X
+        </span>
+      </div>
+
       <Footer />
     </>
   );

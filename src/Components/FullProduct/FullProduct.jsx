@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProdCard from "../ProductCard/ProdCard.jsx";
 import { useParams } from "react-router-dom";
+import {validate} from "uuid";
 import "./FullProduct.css";
 
-const FullProduct = ({ data }) => {
+const FullProduct = ({ data, HandleDelete }) => {
   const params = useParams();
 
   const [ProductAd, setProductAd] = useState([]);
@@ -12,7 +13,13 @@ const FullProduct = ({ data }) => {
     if (sessionStorage.getItem("Cart") === null) {
       sessionStorage.setItem("Cart", JSON.stringify(ProductAd));
     } else {
-      sessionStorage.setItem("Cart", JSON.stringify([...JSON.parse(sessionStorage.getItem("Cart")), ProductAd[0]]));
+      sessionStorage.setItem(
+        "Cart",
+        JSON.stringify([
+          ...JSON.parse(sessionStorage.getItem("Cart")),
+          ProductAd[0],
+        ])
+      );
     }
   };
 
@@ -53,6 +60,13 @@ const FullProduct = ({ data }) => {
                 {" "}
                 Adicionar ao Carrinho
               </button>
+              {validate(id) ? (
+                <button className="btn btn-delete" onClick={() => HandleDelete(id)}>
+                  Excluir
+                </button>
+              ) : (
+                <span></span>
+              )}
             </div>
           </div>
         ))}
