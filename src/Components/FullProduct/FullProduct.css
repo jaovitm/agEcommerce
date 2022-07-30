@@ -1,81 +1,149 @@
-.ProductAd-container{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 50vw;
-height: 30vw;
-margin-top: 1rem;
+.ProductAd-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 30vw;
+  margin-top: 1rem;
 }
 
 .ProductAd-container > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
-.ProductAd-container > div > img{
-    width: 100%;
-    height: auto;
+.ProductAd-container > div > img {
+  width: 100%;
+  height: auto;
 }
 
-.btn-cart{
-    margin-left: 1rem;
-    border: 2px solid var(--color-bg-variant);
-    color: var(--color-white);
-    background-color: transparent;
+.btn-cart {
+  margin-left: 1rem;
+  border: 2px solid var(--color-bg-variant);
+  color: var(--color-white);
+  background-color: transparent;
 }
 
-.btn-delete{
-    width: 6rem;
-    margin-left: calc(50% - 5rem);
-    margin-top: 1rem;
-    border: 2px solid var(--color-bg-variant);
-    color: var(--color-tertiary);
-    background-color: transparent;
+.btn-delete {
+  width: 6rem;
+  margin-left: calc(50% - 5rem);
+  margin-top: 1rem;
+  border: 2px solid var(--color-bg-variant);
+  color: var(--color-tertiary);
+  background-color: transparent;
 }
 
-.btn-delete:hover{
-        background-color: rgb(99, 4, 4);
-        color: var(--color-white);
-
+.btn-delete:hover {
+  background-color: rgb(99, 4, 4);
+  color: var(--color-white);
 }
 
-div > small > span{
-    color: var(--color-tertiary);
+.contentEditable {
+  background-color: var(--color-bg);
+  font-size: 2rem;
+  color: whitesmoke;
 }
 
-div > strong > span{
-    color: var(--color-secundary);
+.editProductModal {
+  position: fixed;
+  padding: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-bg-variant);
+  color: black;
+  transform: scale(1.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.25s ease-in-out, transform 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+  z-index: 9999999;
 }
 
-@media screen and (max-width: 1024px) {
-  .ProductAd-container{
-width: auto;
-height: auto;
-padding: 1rem;
-margin-bottom: 3rem;
+.modal-content {
+  justify-content: center;
+  background-color: whitesmoke;
+  padding: 30px;
+  width: 50vw;
+  border-radius: 0.5rem;
 }
 
-.btn-delete{
-    width: fit-content;
-    margin-left: 1rem;
+.close-button {
+  position: relative;
+  top: -3vw;
+  left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  text-align: justify;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  line-height: 24px;
+  border-radius: 50%;
 }
 
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 @media screen and (max-width: 600px) {
-  .ProductAd-container{
-width: auto;
-height: auto;
-padding: 1rem;
-margin-bottom: 3rem;
 
+  .removeProductModal {
+  flex-direction: column-reverse;
 }
-.ProductAd-container > div {
-    grid-template-columns: 1fr;
+
+.modal-content {
+  width: 70vw;
+  margin: 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
 }
-.btn-delete{
+}
+
+div > small > span {
+  color: var(--color-tertiary);
+}
+
+div > strong > span {
+  color: var(--color-secundary);
+}
+
+@media screen and (max-width: 1024px) {
+  .ProductAd-container {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .btn-delete {
     width: fit-content;
     margin-left: 1rem;
+  }
 }
+
+@media screen and (max-width: 600px) {
+  .ProductAd-container {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+  .ProductAd-container > div {
+    grid-template-columns: 1fr;
+  }
+  .btn-delete {
+    width: fit-content;
+    margin-left: 1rem;
+  }
 }

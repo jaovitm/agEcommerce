@@ -428,10 +428,7 @@ function App() {
           }
         />
 
-        <Route
-          path=":product"
-          element={<FullProduct data={Products} HandleDelete={HandleDelete} />}
-        />
+        <Route path=":product" element={<FullProduct data={Products} />} />
 
         <Route path="login" element={<Login />} />
         <Route path="cart" element={<Cart />} />
@@ -439,12 +436,31 @@ function App() {
           path="Adicionar%20Produto"
           element={<AddProduct updateProducts={updateProducts} />}
         />
+
+        <Route
+          path="admin"
+          element={
+            <Store
+              category={"Admin"}
+              data={Products}
+              HandleDelete={HandleDelete}
+            />
+          }
+        />
+        <Route
+          path="admin/:product"
+          element={
+            <FullProduct
+              data={Products}
+              admin={true}
+              setProducts={setProducts}
+            />
+          }
+        />
       </Routes>
 
       <div className="removeProductModal">
-        <h1 className="modal-content">
-          Produto deletado com sucesso!
-        </h1>
+        <h1 className="modal-content">Produto deletado com sucesso!</h1>
         <span className="close-button" onClick={closeModal}>
           X
         </span>

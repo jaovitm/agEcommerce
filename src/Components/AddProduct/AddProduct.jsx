@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./AddProduct.css";
+
 
 const AddProduct = ({ updateProducts }) => {
   var img;
   const reader = new FileReader();
+  const history = useNavigate();
   let formisCorrect = false;
 
   const openFile = (event) => {
@@ -95,7 +98,10 @@ const AddProduct = ({ updateProducts }) => {
   return (
     <>
       <div className="container AddProduct-container">
-        <h1>Adicionar Novo Produto</h1>
+          <h1>Adicionar Novo Produto</h1>
+        <div className="admMenu">
+          <button className="btn btn-primary" onClick={()=>{history("/admin")}}>Menu Administrador</button>
+        </div>
         <img id="output" />
 
         <form className="addProductForm">

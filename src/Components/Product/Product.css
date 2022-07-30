@@ -1,7 +1,9 @@
 .lt{
     text-decoration: line-through;
 }
-
+.btn-edit{
+    margin-left: 1rem;
+}
 .product-container{
     display: grid;
     grid-template-columns: 30vw 40vw;

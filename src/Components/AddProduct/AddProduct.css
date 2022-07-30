@@ -1,4 +1,4 @@
-.AddProduct-container {
+.AddProduct-container{
   width: 90vw;
   height: max-content;
   margin: 0 auto 3rem;
@@ -90,6 +90,12 @@ input:disabled,
     visibility: hidden;
   transition: visibility 0.25s ease-in-out, transform 0.25s ease-in-out,
     opacity 0.25s ease-in-out;
+}
+
+.admMenu{
+  display: flex;
+  justify-content: end;
+  width: 100%;
 }
 
 .modal-content {
